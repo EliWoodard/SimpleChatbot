@@ -1,25 +1,28 @@
-function getBotResponse(userInput) {
-    // Perform actions and generate bot response based on user input
-    // ...
-    return botResponse;
-  }
-  
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     var userInput = document.getElementById('user-input');
+    var chatLog = document.getElementById('chat-log');
   
-    userInput.addEventListener('keypress', function(event) {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        if (userInput.value.trim() !== '') {
-          var userMessage = userInput.value;
+    userInput.addEventListener('keypress', async function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            if (userInput.value.trim() !== '') {
+                var userMessage = userInput.value;
   
-          // Call the getBotResponse function and handle the bot's response
-          var botResponse = getBotResponse(userMessage);
-          console.log(botResponse);
+                // Call the getBotResponse function and handle the bot's response
+                var botResponse = await window.getBotResponse(userMessage);
   
-          userInput.value = '';
+                // Display user message
+                var userDiv = document.createElement("div");
+                userDiv.textContent = 'You: ' + userMessage;
+                chatLog.appendChild(userDiv);
+  
+                // Display bot's response
+                var botDiv = document.createElement("div");
+                botDiv.textContent = 'Bot: ' + botResponse;
+                chatLog.appendChild(botDiv);
+  
+                userInput.value = '';
+            }
         }
-      }
     });
-  });
-  
+});
