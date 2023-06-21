@@ -3,6 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-color: #626667;
 }
 
 /* Chat container styles */
@@ -10,9 +15,10 @@
     width: 60%;
     height: 90vh; /* 90% of the viewport height */
     margin: 5vh auto; /* center the container and take remaining 10% height */
-    border: 1px solid #ccc;
+    border: 1px solid #525252;
     position: relative; /* This is needed for the absolute positioning of user input box */
     overflow: hidden; /* To hide the content overflow */
+    background: #555;
 }
 
 /* Chat log styles */
@@ -20,8 +26,8 @@
     height: 90%; /* 90% height of chat-container */
     overflow-y: auto;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-    background-color: #f5f5f5;
+    border-bottom: 1px solid #525252;
+    background-color: #333333;
 }
 
 /* User input box styles */
@@ -30,7 +36,7 @@
     bottom: 0; /* Stick it to the bottom */
     width: 100%; /* Full width of the chat-container */
     height: 10%; /* 10% height of chat-container */
-    background-color: white;
+    background-color: #333333;
     z-index: 1000; /* To keep it above everything */
 }
 
@@ -41,4 +47,5 @@
     border: none;
     padding: 10px;
     resize: none;
+    background: #333333;
 }

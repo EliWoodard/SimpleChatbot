@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             if (userInput.value.trim() !== '') {
                 var userMessage = userInput.value;
-  
+
                 // Call the getBotResponse function and handle the bot's response
-                var botResponse = await window.getBotResponse(userMessage);
-  
+                var botResponse = await getBotResponse(userMessage);
+
                 // Display user message
                 var userDiv = document.createElement("div");
                 userDiv.textContent = 'You: ' + userMessage;
